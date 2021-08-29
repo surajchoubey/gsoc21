@@ -41,7 +41,7 @@ $$
 ### An example using function evaluation at sample points
 
 A little different example when we are not dealing with the acception-rejection sampling area and the entire subspace $$K$$ is our integration domain and our sampling area. In here we evaluate the function at each point.
-Suppose we take an integration function $$f(x) = e^{-x^{2}}$$. Since the function has depends on one variable only that is, `x`, it is supposed to be 1-dimensional function and we wish to integrate it from $$ -1 \le x \le 1$$.
+Suppose we take an integration function $$f(x) = e^{-x^{2}}$$. Since the function has depends on one variable only that is, $$x$$, it is supposed to be 1-dimensional function and we wish to integrate it from $$ -1 \le x \le 1$$.
 
 {:refdef: style="text-align: center;"}
 ![e power minus x squared integration]({{site.baseurl}}/assets/img/mc_integration2.png)
@@ -145,7 +145,7 @@ $$
 
 `simple_MC_integration.hpp` contains the header file written for the above algorithm mentioned. [[Link](https://github.com/surajchoubey/volume_approximation/blob/simple-MC-integrate/include/integration/simple_MC_integration.hpp)]
 
-Simple-MC-Integration is the first part of my Google Summer of Code 2021 project. The second part is the **Lovasz-Vempala Monte Carlo Integration**. You can jump to that blog [here](/gsoc21/lv-mc-integration/)!
+Simple-MC-Integration is the first part of my Google Summer of Code 2021 project. The second part is the **Lovasz-Vempala Monte Carlo Integration**. You can jump to that blog [here]({{site.baseurl}}/lv-mc-integration/)!
 
 ### Testing
 
