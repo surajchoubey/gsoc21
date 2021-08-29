@@ -20,10 +20,9 @@ A circle around the origin of radius = 1, say $$ x^{2} + y^{2} = 1 $$ is inscrib
 
 ![Monte Carlo Integration to calculate area of circle]({{site.baseurl}}/assets/img/circle_mc.png)
 
-
 Here comes the use of Monte Carlo Integration Algorithm. 
 * We take randomly sample points inside the square of side $$s$$ which contains our desired circle whose area we wish to calculate. 
-* We check if each 2D random point is inside the circle are not. It is easy to check: Say we have a sampled point (x,y) and we can check if $$ x^{2} + y^{2} \le 1 $$.
+* We check if each 2D random point is inside the circle are not. It is easy to check: Say we have a sampled point $$(x,y)$$ and we can check if $$ x^{2} + y^{2} \le 1 $$.
 * Say we check this for $$N$$ sampled points inside a `for` loop. Let us use a loop counter `int accepted = 0`.
 * If the point satisfied which are the red points in the image, `accepted++`, for the blue points they are rejection points and and are not counted.
 * Now as we are supposed to know the volume of the subspace which is a square that is $$ s^{2} = 4$$ square units.
@@ -116,7 +115,7 @@ b =
 \end{equation*}
 $$
 <br><br>
-$$A$$ is a 4 * 2 matrix, $$X$$ is 2 * 1 matrix and $$b$$ is a 4 * 1 matrix.
+$$A$$ is a $$4 * 2$$ matrix, $$X$$ is $$2 * 1$$ matrix and $$b$$ is a $$4 * 1$$ matrix.
 
 {:refdef: style="text-align: center;"}
 ![2D H-Polytope bound by 2D linear constraints]({{site.baseurl}}/assets/img/hpoly_2D_quadrilateral.png)
@@ -147,13 +146,13 @@ Simple-MC-Integration is the first part of my Google Summer of Code 2021 project
 
 ### Testing
 
-Integral values have been tested using latte integrale, a start of the art software for polytope volume calculation and integral calculator for functions around surrounded by a polytope. The remaining details are equipped in the `README.md` itself. [[Link to the Latte Tests](https://github.com/surajchoubey/latte-integrale-checks)]
+Integral values have been tested using [latte integrale](https://www.math.ucdavis.edu/~latte/software.php), state of the art software for polytope volume calculation and integral calculator for functions around surrounded by a polytope. The remaining details are equipped in the `README.md` itself. [[Link to the Latte Tests](https://github.com/surajchoubey/latte-integrale-checks)]
 
 `simple_mc_integration.cpp` contains the tests written. [[Link](https://github.com/surajchoubey/volume_approximation/blob/simple-MC-integrate/test/simple_mc_integration.cpp)]
 
 ### Usage
 
-Here is a miniature code of you can use the simple_mc_integration functions. There are two of them. 
+Here is a miniature code of you can use the `simple_mc_integration.hpp` functions. There are two of them. 
 
 Some prerequisite information: 
 * `NT` is defined for `double` everywhere in the below examples.
@@ -172,8 +171,8 @@ Some prerequisite information:
     }
 
 ```
-<br>
-* [volume_approximation](https://github.com/GeomScale/volume_approximation/tree/develop/include/random_walks) has features of creating Polytopes by from generator function in [known_polytope_generators.h](https://github.com/GeomScale/volume_approximation/blob/develop/include/generators/known_polytope_generators.h) You can use it to create functions mostly in the form of $$[-1,1]^{n}$$
+
+* [volume_approximation](https://github.com/GeomScale/volume_approximation/tree/develop/include/random_walks) has features of generating polytopes by from generator function in [known_polytope_generators.h](https://github.com/GeomScale/volume_approximation/blob/develop/include/generators/known_polytope_generators.h) You can use it to create polytopes mostly in the form of $$[-1,1]^{n}$$.
 
 #### **1. Simple MC Integrate :**
 * Integration limits can be defined by upper limits and lower limits. By default limits are taken to be $$[-1,1]^{n}$$.
@@ -229,7 +228,6 @@ Example 1 integral value = 3.0607
 Example 2 integral value = 7.48
 
 ```
-
 
 #### **2. Simple MC Polytope Integrate :** 
 
