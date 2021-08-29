@@ -15,7 +15,7 @@ This PR is to add two functions in volesti's library to integrate functions arou
 #### Status: **<span style="color:green">Open + Approved</span>**
 
 ### 2. **Lovasz Vempala Integration**
-This PR is to add a single function based on Lovasz Vempala research paper (Pg-7) to integrate logconcave functions around polytope in the N-dimensional space. It has substantial amount of more accuracy than Simple Monte Carlo Integration as mentioned.
+This PR is to add a single function based on Lovasz Vempala research paper (Pg-7) to integrate logconcave functions around polytope in the N-dimensional space.
 #### **[Link to the blog post]({{site.baseurl}}/lv-mc-integration/)**
 #### **[Link to the PR](https://github.com/GeomScale/volume_approximation/pull/170)**
 #### Status: **<span style="color:green">Open</span>**

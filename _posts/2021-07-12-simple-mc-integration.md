@@ -46,7 +46,7 @@ Suppose we take an integration function $$f(x) = e^{-x^{2}}$$. Since the functio
 {: refdef}
 
 * We start off by taking random sample points inside our our subspace that is $$ x \in [-1,1] $$.
-* Suppose for $$N$$ sample points we run loop $$N$$ times.
+* Suppose for $$N$$ sample points we run the loop $$N$$ times.
 * We evaluate the function at each point and take the sum overall. `sum += F(X)`, where X is our sampled point.
 * Volume of the subspace is 2 units let it be `volume`.
 
@@ -129,8 +129,8 @@ For volume calculation, there are three algorithms in the Volesti library that i
 As mentioned above, we are going to calculate the integral pretty much in the same way rather use some professionalism using random walks and volume algorithms.
 
 * We start by taking random sample points inside our our subspace $$K$$.
-* Suppose for $$N$$ sample points we run loop $$N$$ times.
-* We evaluate the function at each point and take the sum overall. `sum += F(X)` $$$$ is our sampled point.
+* Suppose for $$N$$ sample points we run the loop $$N$$ times.
+* We evaluate the function at each point and take the overall sum. `sum += F(X)` $$$$ is our sampled point.
 * Volume of the subspace i.e. a polytope, let it be $$volume(K)$$.
 
 {:refdef: style="text-align: center;"}
@@ -202,8 +202,9 @@ NT simple_mc_integrate (Functor Fx,
                         Limit UpLimit = lt, 
                         int walk_length = 10, 
                         NT e = 0.1)             
-
-
+{
+    // code goes here
+}
 ```
 #### Example code:
 
@@ -213,18 +214,17 @@ Limit LL{-1, -1}; // Lower limits of integration
 Limit UL{1, 1}; // Upper limits of integration
 
 integration_value = simple_mc_integrate <AcceleratedBilliardWalk> (rooted_squaresum, 2, 100000, SOB, LL, UL);
-std :: cout << "Example 1 integral value = " << integration_value << endl;
+std::cout << "Example 1 integral value = " << integration_value << endl;
 
 // default integration limits are taken to `[-1,1]^n`
 integration_value = simple_mc_integrate <BilliardWalk> (exp_normsq, 5, 100000, SOB);
-std :: cout << "Example 2 integral value = " << integration_value << endl;
+std::cout << "Example 2 integral value = " << integration_value << endl;
 
 ```
 
 #### Output code:
 
 ```
-
 Example 1 integral value = 3.0607
 Example 2 integral value = 7.48
 
@@ -258,9 +258,10 @@ NT simple_mc_polytope_integrate(Functor Fx,
                                 volumetype voltype = SOB, 
                                 int walk_length = 1, 
                                 NT e = 0.1, 
-                                Point Origin = pt)             
-                          
-
+                                Point Origin = pt)
+{
+    // code goes here
+}                         
 ```
 #### Example code:
 
@@ -268,18 +269,17 @@ NT simple_mc_polytope_integrate(Functor Fx,
 
 HP = generate_cube <HPOLYTOPE> (10, false);
 integration_value = simple_mc_polytope_integrate <BilliardWalk, HPOLYTOPE> (exp_normsq<double>, HP, 100000, SOB);
-std :: cout << "Example 1 integral value = " << integration_value << endl;
+std::cout << "Example 1 integral value = " << integration_value << endl;
 
 HP = generate_birkhoff <HPOLYTOPE> (4);
 integration_value = simple_mc_polytope_integrate <BilliardWalk, HPOLYTOPE> (one_sqsum, HP, 100000, SOB);
-std :: cout << "Example 2 integral value = " << integration_value << endl;
+std::cout << "Example 2 integral value = " << integration_value << endl;
 
 ```
 
 #### Output code:
 
 ```
-
 Example 1 integral value = 55.20
 Example 2 integral value = 0.000163
 
