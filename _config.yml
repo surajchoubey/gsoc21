@@ -193,6 +193,8 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 5
+baseurl: /gsoc21
+url: surajchoubey.github.io
 
 kramdown:
   input: GFM
