@@ -128,7 +128,7 @@ $$
 
 * `Parameters` are the additional variables that let you decide more variables to customize your function and your gradient function. (Ideally you can look here in [oracle_functors.hpp](https://github.com/GeomScale/volume_approximation/blob/develop/include/ode_solvers/oracle_functors.hpp) from [GeomScale/volume_approximation](https://github.com/GeomScale/volume_approximation) repository and have a close look o how gradient functor, evaluation functor and parameters are constructed under one `struct`)
 
-* `Point` is a user-defined datatype to store n-dimensional points in the n-dimensional space. $$x_{0}$$ is a point chosen such that $$f(x_{0}) \ge \beta^{n} \cdot f(x_{max})$$ satisfies.
+* `Point` is a user-defined datatype to store $$n$$-dimensional points in the $$n$$-dimensional space. $$x_{0}$$ is a point chosen such that $$f(x_{0}) \ge \beta^{n} \cdot f(x_{max})$$ satisfies.
 
 * `NT beta` is a parameter in integration to help decide other $$\beta$$-dependent parameters.
 

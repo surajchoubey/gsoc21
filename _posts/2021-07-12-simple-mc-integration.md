@@ -30,7 +30,7 @@ Here comes the use of Monte Carlo Integration Algorithm.
 {:refdef: style="text-align: center;"}
 $$
     \begin{equation*}
-            \displaystyle Area\; of \; Circle  = Area \; of \; Square \cdot \dfrac{sum}{N}
+            \displaystyle Area\; of \; Circle  = Area \; of \; Square \cdot \dfrac{saccepted}{N}
     \end{equation*}
 $$
 {: refdef}
@@ -71,7 +71,7 @@ To make it easy and more understandable let us break it into some easy terms.
 2. **Integration Function :** The integration function is also supposed to be the same dimensions as the Subspace K. Let the function be $$f(x_{1},x_{2},...,x_{n})$$ or just by $$f(X)$$. [Here, $$X$$ represents a $$n$$-dimensional cartesian point in $$n$$-dimensional space i.e $$(x_{1},x_{2},...,x_{n})$$].
 3. **Sampling :** The sampling as above mentioned in the examples it will not be done here by taking random points. To ensure uniformity of the sampled points inside the polytope, random walks is supposed to be use here to ensure greater accuracy and efficiency. It is feature from volesti library in [volume_approximation](https://github.com/GeomScale/volume_approximation/tree/develop/include/random_walks) by [GeomScale](https://geomscale.github.io) the same GSoC organization I am working with.
 
-Types of random walks offered here for sampling are **BallWalk**, **BilliardWalk**, **AcceleratedBilliardWalk**, **JohnWalk**, **DikinWalk**, **VaidyaWalk**, **RDHRWalk**.
+Types of random walks offered here for sampling are **BallWalk**, **BilliardWalk**, **AcceleratedBilliardWalk**, **JohnWalk**, **DikinWalk**, **VaidyaWalk** and **RDHRWalk**.
 
 The integration domain which is a polytope ($$n$$-dimensional convex body) in H-representation. Polytopes in H-representation polytopes like Cubes, Rectangles, simplices, product simplices, cross-polytopes, birkhoff polytopes. Such polytopes are can be created using Volesti libraries itself in representation of the form of $$AX \le b$$, where $$A$$ \| $$b$$ is family of hyperplanes of in the form mentioned below.
 
