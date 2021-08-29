@@ -30,7 +30,7 @@ Here comes the use of Monte Carlo Integration Algorithm.
 {:refdef: style="text-align: center;"}
 $$
     \begin{equation*}
-            \displaystyle Area\; of \; Circle  = Area \; of \; Square \cdot \dfrac{saccepted}{N}
+            \displaystyle Area\; of \; Circle  = Area \; of \; Square \cdot \dfrac{accepted}{N}
     \end{equation*}
 $$
 {: refdef}
