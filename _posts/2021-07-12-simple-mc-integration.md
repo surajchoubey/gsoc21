@@ -6,8 +6,6 @@ categories: jekyll update
 permalink: /simple-mc-integration/
 ---
 
-### Need for Monte Carlo Integration
-
 Integration is a fundamental problem in mathematics and computer science with many applications that span the whole spectrum of sciences and engineering. It appears, for example, in problems in statistics, biology, and economics, to name a few concrete application areas.
 Integration of functions non-rectangular domains like a general convex body or say a polytope turns our to be a difficult task to solve directly. Also, for higher dimensional integral calculation around defined integration limits can be more harder task while dealing with so many variables. To rule out this difficulty, Monte Carlo Integration is used. The overview can be found [here](https://en.wikipedia.org/wiki/Monte_Carlo_integration#Overview) for this algorithm.
 
