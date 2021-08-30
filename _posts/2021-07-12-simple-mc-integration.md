@@ -14,15 +14,15 @@ Integration of functions non-rectangular domains like a general convex body or s
 In mathematics, Monte Carlo integration is a technique for numerical integration using random numbers. It is a particular Monte Carlo method that numerically computes a definite integral. While other algorithms usually evaluate the integrand at a regular grid, Monte Carlo randomly chooses points at which the integrand is evaluated.This method is particularly useful for higher-dimensional integrals. Also it can be used to integrate functions around a $$N$$-dimensional polytope. [[Wikipedia](https://en.wikipedia.org/wiki/Monte_Carlo_integration)]
 
 ### A naive example using acception-rejection sampling
-Here it is a way to estimate the area of the circle using Monte Carlo Integration by acception-rejection sampling.
+Here is a way to estimate the area of the circle using Monte Carlo Integration by acception-rejection sampling.
 
-A circle around the origin of radius = 1, say $$ x^{2} + y^{2} = 1 $$ is inscribed inside the square. We know that area of circle is $$\pi r^{2}$$, but just assume we don't know the value of $$\pi$$. How are we supposed to calculate the circle's area?
+A circle around the origin of radius = 1, say $$ x^{2} + y^{2} = 1 $$ is inscribed inside the square. We know the area of circle is $$\pi r^{2}$$, but just assume we don't know the value of $$\pi$$. How are we supposed to calculate the circle's area?
 
 ![Monte Carlo Integration to calculate area of circle]({{site.baseurl}}/assets/img/circle_mc.png)
 
 Here comes the use of Monte Carlo Integration Algorithm. 
 * We take randomly sample points inside the square of side $$s$$ which contains our desired circle whose area we wish to calculate. 
-* We check if each 2D random point is inside the circle are not. It is easy to check: Say we have a sampled point $$(x,y)$$ and we can check if $$ x^{2} + y^{2} \le 1 $$.
+* We check if each $$2$$D random point is inside the circle are not. It is easy to check: Say we have a sampled point $$(x,y)$$ and we can check if $$ x^{2} + y^{2} \le 1 $$.
 * Say we check this for $$N$$ sampled points inside a `for` loop. Let us use a loop counter `int accepted = 0`.
 * If the point satisfied which are the red points in the image, `accepted++`, for the blue points they are rejection points and and are not counted.
 * Now as we are supposed to know the volume of the subspace which is a square that is $$ s^{2} = 4$$ square units.
@@ -44,10 +44,10 @@ Suppose we take an integration function $$f(x) = e^{-x^{2}}$$. Since the functio
 ![e power minus x squared integration]({{site.baseurl}}/assets/img/mc_integration2.png)
 {: refdef}
 
-* We start off by taking random sample points inside our our subspace that is $$ x \in [-1,1] $$.
+* We start off by taking random sample points inside our subspace that is $$ x \in [-1,1] $$.
 * Suppose for $$N$$ sample points we run the loop $$N$$ times.
-* We evaluate the function at each point and take the sum overall. `sum += F(X)`, where X is our sampled point.
-* Volume of the subspace is 2 units let it be `volume`.
+* We evaluate the function at each point and take the overall sum. `sum += F(X)`, where X is our sampled point.
+* Volume of the subspace is 2 units i.e. $$volume(K)$$.
 
 {:refdef: style="text-align: center;"}
 $$
@@ -68,21 +68,24 @@ $$
 To make it easy and more understandable let us break it into some easy terms.
 
 1. **Subspace K :** The integration domain around which the function is meant to be integrated. The points which are sampled are taken from this subspace as well. This subspace is a polytope, a convex $$n$$-dimensional body, where $$ n > 0 $$.
-2. **Integration Function :** The integration function is also supposed to be the same dimensions as the Subspace K. Let the function be $$f(x_{1},x_{2},...,x_{n})$$ or just by $$f(X)$$. [Here, $$X$$ represents a $$n$$-dimensional cartesian point in $$n$$-dimensional space i.e $$(x_{1},x_{2},...,x_{n})$$].
-3. **Sampling :** The sampling as above mentioned in the examples it will not be done here by taking random points. To ensure uniformity of the sampled points inside the polytope, random walks is supposed to be use here to ensure greater accuracy and efficiency. It is feature from volesti library in [volume_approximation](https://github.com/GeomScale/volume_approximation/tree/develop/include/random_walks) by [GeomScale](https://geomscale.github.io) the same GSoC organization I am working with.
+2. **Integration Function :** The integration function is also supposed to be the same dimensions as the convex body K. Let the function be $$f(x_{1},x_{2},...,x_{n})$$ or just by $$f(X)$$. [Here, $$X$$ represents a $$n$$-dimensional cartesian point in $$n$$-dimensional space i.e $$(x_{1},x_{2},...,x_{n})$$].
+3. **Sampling :** The sampling as above mentioned in the examples it will not be done here by taking random points. To ensure uniformity of the sampled points inside the polytope, random walks is supposed to be use here to ensure greater accuracy and efficiency. It is feature from volesti library in [random walks](https://github.com/GeomScale/volume_approximation/tree/develop/include/random_walks) directory by [volume approximation](https://github.com/GeomScale/volume_approximation/) by [GeomScale](https://geomscale.github.io/).
 
 Types of random walks offered here for sampling are **BallWalk**, **BilliardWalk**, **AcceleratedBilliardWalk**, **JohnWalk**, **DikinWalk**, **VaidyaWalk** and **RDHRWalk**.
 
-The integration domain which is a polytope ($$n$$-dimensional convex body) in H-representation. Polytopes in H-representation polytopes like Cubes, Rectangles, simplices, product simplices, cross-polytopes, birkhoff polytopes. Such polytopes are can be created using Volesti libraries itself in representation of the form of $$AX \le b$$, where $$A$$ \| $$b$$ is family of hyperplanes of in the form mentioned below.
+The integration domain which is a polytope ($$n$$-dimensional convex body) in H-representation. Polytopes can be represented using H-representation to store cubes, rectangles, simplices, product simplices, cross-polytopes, birkhoff polytopes. Such polytopes are can be created using Volesti libraries itself, represented in the form $$AX \le b$$, where $$A$$ \| $$b$$ is family of hyperplanes of in the form mentioned below.
 
 Suppose a polytope is defined in H-representation(using a family of hyperplanes and forming a closed convex figure). For example we take a quadrilateral bounded by 2D linear equations and the closed quadrilateral is satisfied by the following constaints:
 
+{:refdef: style="text-align: center;"}
 $$ x_{1} + x_{2} \le 10$$ <br>
 $$ -2x_{1} + 3x_{2} \le 5$$ <br>
 $$ -x_{1} - x_{2} \le 10$$ <br>
 $$ x_{1} - x_{2} \le 10$$ <br>
+{:refdef}
 
 They can be represented in the form of $$AX \le b$$, where <br><br>
+{:refdef: style="text-align: center;"}
 $$
 \begin{equation*}
 A = 
@@ -96,6 +99,7 @@ A =
 $$
 $$
 \begin{equation*}
+\qquad
 X = 
 \begin{bmatrix}
 x \\
@@ -105,6 +109,7 @@ y \\
 $$
 $$
 \begin{equation*}
+\qquad
 b = 
 \begin{bmatrix}
 10 \\
@@ -114,7 +119,8 @@ b =
 \end{bmatrix}
 \end{equation*}
 $$
-<br><br>
+{:refdef}
+
 $$A$$ is a $$4 * 2$$ matrix, $$X$$ is $$2 * 1$$ matrix and $$b$$ is a $$4 * 1$$ matrix.
 
 {:refdef: style="text-align: center;"}
@@ -130,7 +136,7 @@ As mentioned above, we are going to calculate the integral pretty much in the sa
 * We start by taking random sample points inside our our subspace $$K$$.
 * Suppose for $$N$$ sample points we run the loop $$N$$ times.
 * We evaluate the function at each point and take the overall sum. `sum += F(X)` $$$$ is our sampled point.
-* Volume of the subspace i.e. a polytope, let it be $$volume(K)$$.
+* Volume of the convex body i.e. a polytope, let it be $$volume(K)$$.
 
 {:refdef: style="text-align: center;"}
 $$
@@ -152,11 +158,11 @@ Integral values have been tested using [latte integrale](https://www.math.ucdavi
 
 ### Usage
 
-Here is a miniature code of you can use the `simple_mc_integration.hpp` functions. There are two of them. 
+Here is a miniature code to show the use the `simple_mc_integration.hpp` functions. There are two of them. 
 
 Some prerequisite information: 
 * `NT` is defined for `double` everywhere in the below examples.
-* Assume that we have already created our functions for integration. They look like this and they are supposed to be integrated around the polytopes or the integration limits we can define. 
+* Assume that we have already created our functions for integration. They look like this below and they are supposed to be integrated around the convex bodies i.e. polytopes or the integration limits we can define. 
 
 ```ruby
 
@@ -175,12 +181,12 @@ Some prerequisite information:
 * [volume_approximation](https://github.com/GeomScale/volume_approximation/tree/develop/include/random_walks) has features of generating polytopes by from generator function in [known_polytope_generators.h](https://github.com/GeomScale/volume_approximation/blob/develop/include/generators/known_polytope_generators.h) You can use it to create polytopes mostly in the form of $$[-1,1]^{n}$$.
 
 #### **1. Simple MC Integrate :**
-* Integration limits can be defined by upper limits and lower limits. By default limits are taken to be $$[-1,1]^{n}$$.
+* Integration limits can be defined by upper limits and lower limits. By default, limits are taken to be $$[-1,1]^{n}$$.
 * `Functor Fx` is the integration function.
 * `dim` & `N` are dimensions and number of sample points in unsigned integer format.
 * `voltype` is `enum` for volume options like SOB, CB and CG. (Mentioned above)
 * `LowLimit` and `UpLimit` represents `std::vector` masked as `Limits` and you can check their declaration below in the usage.
-* `walk_length` of type `int` is the length of walk during making the random walks and taking sample points.
+* `walk_length` of type `int` is the length of the walk during making the random walks and taking sample points.
 * `e` represents the tolerable limits of error.
 * The function defined here is `simple_mc_integrate()` and is stuctured as follows in C++.
 
