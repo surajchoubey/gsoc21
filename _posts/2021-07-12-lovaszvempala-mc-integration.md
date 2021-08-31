@@ -95,7 +95,6 @@ template
 <
 	typename EvaluationFunctor,
 	typename GradientFunctor,
-	typename Parameters,
 	typename WalkType,
 	typename Polytope,
 	typename Point,
@@ -103,7 +102,6 @@ template
 >
 NT lovasz_vempala_integrate(EvaluationFunctor &g,
                             GradientFunctor &grad_g,
-                            Parameters &params,
                             Polytope &P,
                             Point x0,
                             NT beta = 1.0,
@@ -127,13 +125,13 @@ NT lovasz_vempala_integrate(EvaluationFunctor &g,
   {:refdef }
   the term right above is the gradient for $$f(x)$$ which is $$\nabla f(x)$$. Also, $$\dfrac{\partial f}{\partial y}$$ represents partial differentiation of a function $$f$$ with respect to $$y$$.
 
-* `Parameters` are the additional variables that let you decide more variables to customize your function and your gradient function. (Ideally you can look here in [oracle_functors.hpp](https://github.com/GeomScale/volume_approximation/blob/develop/include/ode_solvers/oracle_functors.hpp) from [GeomScale/volume_approximation](https://github.com/GeomScale/volume_approximation) repository and have a close look o how gradient functor, evaluation functor and parameters are constructed under one `struct`)
+[comment]: <> (* `Parameters` are the additional variables that let you decide more variables to customize your function and your gradient function. (Ideally you can look here in [oracle_functors.hpp](https://github.com/GeomScale/volume_approximation/blob/develop/include/ode_solvers/oracle_functors.hpp) from [GeomScale/volume_approximation](https://github.com/GeomScale/volume_approximation) repository and have a close look o how gradient functor, evaluation functor and parameters are constructed under one `struct`))
 
 * `Point` is a user-defined datatype to store $$n$$-dimensional points in the $$n$$-dimensional space. $$x_{0}$$ is a point chosen such that $$f(x_{0}) \ge \beta^{n} \cdot f(x_{max})$$ satisfies.
 
 * `NT beta` is a parameter in integration to help decide other $$\beta$$-dependent parameters.
 
-* `volumetype` is an `enum` used to specify the volume algorithm in this [directory](https://github.com/GeomScale/volume_approximation/tree/develop/include/volume) from [GeomScale/volume_approximation](https://github.com/GeomScale/volume_approximation) to calculate the volume of the given convex body. Available options from `enum` ones are `CB`,`CG` and `SOB`. Namely, cooling balls, cooling gaussians and sequence of balls algorithm.
+* `volumetype` is an `enum` used to specify the volume algorithm in this [directory](https://github.com/GeomScale/volume_approximation/tree/develop/include/volume) from [GeomScale/volume_approximation](https://github.com/GeomScale/volume_approximation) to calculate the volume of the convex body passed to this function. Available options from `enum` ones are `CB`,`CG` and `SOB`. Namely, cooling balls, cooling gaussians and sequence of balls algorithm.
 
 * `walk_length` is the walk length which is going to be used for length of the walks which is supposed to be used in running warmstart samples, volume calculation algorithms and HMC algorithm.
 

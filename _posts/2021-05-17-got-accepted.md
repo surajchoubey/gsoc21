@@ -8,6 +8,14 @@ permalink: /gotaccepted/
 
 So I was lying in bed after having a tiring day of end-semester exams and watching Big Bang Theory, waiting for 23:30 IST (18:00 UTC) for my acceptance letter. I was feeling a strong chance of 40-60 of getting selected after analyzing my efforts I had invested during the Pre-GSoC time. My heart was pounding fast and I slowly became less interested in the sitcom and suddenly my phone pops up a an email notification. Holy moly! **I got accepted into Google Summer of Code '21 for real**.
 
+I would love to express my gratitude towards my mentors:
+* [Marios Papachristou](https://papachristoumarios.github.io/)
+* [Apostolos Chalkis](https://tolischal.github.io/)
+* [Vissarion Fisikopoulos](https://vissarion.github.io/)
+* [Elias Tsigaridas](https://who.paris.inria.fr/Elias.Tsigaridas/)
+
+for giving me this opportunity and considering me to be worthy of this project. Also, a huge thanks to Google Summer of Code team for conducting this wonderful program.
+
 ![GSoC Acceptance email]({{site.baseurl}}/assets/img/accepted.png)
 
 Also you can find the **[link](https://summerofcode.withgoogle.com/projects/#5929577068625920)** to my GSoC project.

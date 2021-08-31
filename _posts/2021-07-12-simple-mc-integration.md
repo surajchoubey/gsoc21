@@ -121,7 +121,7 @@ b =
 $$
 {:refdef}
 
-$$A$$ is a $$4 * 2$$ matrix, $$X$$ is $$2 * 1$$ matrix and $$b$$ is a $$4 * 1$$ matrix.
+$$A$$ is a $$4 * 2$$ matrix, $$X$$ is $$2 * 1$$ matrix and $$b$$ is a $$4 * 1$$ matrix. For more detailed insight about convex sets, you can study them from [here](https://www.fmf.uni-lj.si/~lavric/lauritzen.pdf).
 
 {:refdef: style="text-align: center;"}
 ![2D H-Polytope bound by 2D linear constraints]({{site.baseurl}}/assets/img/hpoly_2D_quadrilateral.png)
