@@ -115,7 +115,7 @@ NT lovasz_vempala_integrate(EvaluationFunctor &g,
 <br>
 * `EvaluationFunctor` is the type of function expressed in terms of $$g(x)$$ which is meant to be integrated in the form of $$f(x) = e^{-g(x)}$$ around the provided convex body.
 
-* `GradientFunctor` is a type of gradient function which returns the gradient of a the `EvaluationFunctor g` as discussed above to return<br>
+* `GradientFunctor` is a type of gradient function which returns the gradient of the `EvaluationFunctor g` as discussed above to return<br>
   {:refdef: style="text-align: center;"}
   $$
     \begin{equation*}
