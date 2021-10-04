@@ -148,9 +148,9 @@ After supplying the above quantities and objects to the integration function, we
 
 3. From the supplied `WalkType`, $$k$$ warmstart samples are run to ensure that the HMC walks got properly mixed and follow memoryless property to choose the starting point based on random decision.
 
-4. Proceeding to the main part of the Lovasz Vempala Algorithm, a 2-level nested loop is run. In the outer loop, we keep running the loop until variance $$a_{i} $$ crosses unity. $$W_{i}$$ for $$i = 1,2,...,m$$ is calculated and multiplied subsequently to $$W_{0}$$ which was previous calculated as $$volume(K)$$.
+4. Proceeding to the main part of the Lovasz Vempala Algorithm, a 2-level nested loop is run. In the outer loop, we keep running the loop until variance $$ a_{i} $$ crosses unity. $$W_{i}$$ for $$i = 1,2,...,m$$ is calculated and multiplied subsequently to $$W_{0}$$ which was previous calculated as $$volume(K)$$.
 
-5. For the inner loop HMC walks are executed inside the convex body which samples points properly. $$W_{i}$$ is calculated for $$g(x)$$ expressed as a logconcave function where $$g(x) \propto a_{i} - a_{i-1}$$ for $$k$$ Hamiltonian Monte Carlo walks with `walk_length` set from the function declaration itself. 
+5. In each phase, we calculate $$ W_{i} $$ via drawing $$k$$ samples using the HMC sampler with boundary reflections. We sample from the density proportional to $$ f_{i-1} $$ and calculate the sample mean of $$ \dfrac{f_{i}}{f_{i-1}} \propto e^{-g(x)(a_{i} - a_{i-1})} $$. The HMC function and gradient oracles use the functions a_{i-1}g(x) and a_{i-1} \cdot \nabla g(x) $$ respectively.
 
 6. Return $$W = W_{0} W_{1} ... W_{m}$$.
 
