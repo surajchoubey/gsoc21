@@ -22,7 +22,7 @@ A circle around the origin of radius = 1, say $$ x^{2} + y^{2} = 1 $$ is inscrib
 
 Here comes the use of Monte Carlo Integration Algorithm. 
 * We take randomly sample points inside the square of side $$s$$ which contains our desired circle whose area we wish to calculate. 
-* We check if each $$2$$D random point is inside the circle are not. It is easy to check: Say we have a sampled point $$(x,y)$$ and we can check if $$ x^{2} + y^{2} \le 1 $$.
+* We check if each $$2$$D random point is inside the circle or not. It is easy to check: Say we have a sampled point $$(x,y)$$ and we can check if $$ x^{2} + y^{2} \le 1 $$.
 * Say we check this for $$N$$ sampled points inside a `for` loop. Let us use a loop counter `int accepted = 0`.
 * If the point satisfied which are the red points in the image, `accepted++`, for the blue points they are rejection points and and are not counted.
 * Now as we are supposed to know the volume of the subspace which is a square that is $$ s^{2} = 4$$ square units.
