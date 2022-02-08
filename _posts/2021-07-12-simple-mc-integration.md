@@ -11,7 +11,7 @@ Integration of functions non-rectangular domains like a general convex body or s
 
 ### What is Monte Carlo Integration?
 
-In mathematics, Monte Carlo integration is a technique for numerical integration using random numbers. It is a particular Monte Carlo method that numerically computes a definite integral. While other algorithms usually evaluate the integrand at a regular grid, Monte Carlo randomly chooses points at which the integrand is evaluated.This method is particularly useful for higher-dimensional integrals. Also it can be used to integrate functions around a $$N$$-dimensional polytope. [[Wikipedia](https://en.wikipedia.org/wiki/Monte_Carlo_integration)]
+In mathematics, Monte Carlo integration is a technique for numerical integration using random numbers. It is a particular Monte Carlo method that numerically computes a definite integral. While other algorithms usually evaluate the integrand at a regular grid, Monte Carlo randomly chooses points at which the integrand is evaluated.This method is particularly useful for higher-dimensional integrals. Also it can be used to integrate functions around a $$N$$-dimensional polytope. [Wikipedia](https://en.wikipedia.org/wiki/Monte_Carlo_integration)]
 
 ### A naive example using acception-rejection sampling
 Here is a way to estimate the area of the circle using Monte Carlo Integration by acception-rejection sampling.

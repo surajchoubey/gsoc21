@@ -15,7 +15,7 @@ author: Suraj Choubey
 
 navbar-links:
   About Me: "aboutme"
-  List of PRs: "listofPRs"
+  List of PRs: "pullrequests"
 
 # --- Logo --- #
 
@@ -223,6 +223,7 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
+  - vendor
 
 plugins:
   - jekyll-paginate
