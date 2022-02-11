@@ -6,7 +6,7 @@ categories: jekyll update
 permalink: /gotaccepted/
 ---
 
-So I was lying in bed after having a exhausting day of end-semester exams and watching [The Big Bang Theory](https://www.imdb.com/title/tt0898266/s), waiting for 23:30 IST (18:00 UTC) for my acceptance letter. I was feeling a strong chance of 40-60 of getting selected after analyzing my efforts I had invested during the Pre-GSoC time. My heart was pounding fast and I slowly became less interested in the sitcom and suddenly my phone pops up a an email notification. Holy moly! **I got accepted into Google Summer of Code '21 for real**.
+So I was lying in bed after having a exhausting day of end-semester exams and watching [The Big Bang Theory](https://www.imdb.com/title/tt0898266/), waiting for 23:30 IST (18:00 UTC) for my acceptance letter. I was feeling a strong chance of 40-60 of getting selected after analyzing my efforts I had invested during the Pre-GSoC time. My heart was pounding fast and I slowly became less interested in the sitcom and suddenly my phone pops up a an email notification. Holy cow! **I got accepted into Google Summer of Code '21 for real**.
 
 I would love to express my gratitude towards my mentors:
 * [Marios Papachristou](https://papachristoumarios.github.io/)
